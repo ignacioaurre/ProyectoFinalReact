@@ -10,7 +10,7 @@
 }
 
 .tituloHeader {
-  width: 80%;
+  width: 95%;
   font-size: 36px;
   align-self: center;
   padding-left: 40px;
@@ -22,7 +22,8 @@
 }
 
 .nombreUsuario {
-  width: 50%;
+  width: 70%;
   font-size: 25px;
+  justify-self: end;
   align-self: center;
 }

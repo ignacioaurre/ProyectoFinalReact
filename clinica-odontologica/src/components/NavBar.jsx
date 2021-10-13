@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavComponent from './NavComponent';
 import "../Styles/Navbar.css"
 
 const Navbar = () => {
@@ -9,12 +10,12 @@ const Navbar = () => {
 
     return (
         <div className="navbarContainer">
-            <div className="options" onClick={cambioColor}></div>
-            <div className="options" onClick={cambioColor}></div>
-            <div className="options" onClick={cambioColor}></div>
-            <div className="options" onClick={cambioColor}></div>
-            <div className="options" onClick={cambioColor}></div>
-            <div className="options" onClick={cambioColor}></div>
+            <NavComponent cambioColor={cambioColor} />
+            <NavComponent cambioColor={cambioColor} />
+            <NavComponent cambioColor={cambioColor} />
+            <NavComponent cambioColor={cambioColor} />
+            <NavComponent cambioColor={cambioColor} />
+            <NavComponent cambioColor={cambioColor} />
         </div>
     );
 }
