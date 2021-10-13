@@ -10,23 +10,34 @@ import MisDatos from "./MisDatos";
 import CierreSesion from "./CierreSesion"
 
 import "../Styles/Navbar.css"
+import imagenHome from "../images/Home.png"
+import imagenNuevoTurno from "../images/NuevoTurno.png"
+import imagenTurnos from "../images/MisTurnos.png"
+import imagenEstudios from "../images/MisEstudios.png"
+import imagenDatos from "../images/MisDatos.png"
 
 const Navbar = () => {
+
+    const [imagenFondo, setImagenFondo] = useState(imagenHome)
+
+    const cambioImagen = (e) => {
+        setImagenFondo(e.target.id)
+    } 
 
     const cambioColor = (e) =>{
         e.target.className === "options" ? e.target.className = "optionsSelected" : e.target.className = "options"
     }
 
     return (
-        <div className="navbarContainer">
+        <div className="navbarContainer" style={{backgroundImage: `url(${imagenFondo})`}}>
             <Router>
                 <div className="navbarComponent">
-                <NavComponent cambioColor={cambioColor} titulo="Home" ruta="/"/>
-                <NavComponent cambioColor={cambioColor} titulo="Nuevo Turno" ruta="/nuevoturno"/>
-                <NavComponent cambioColor={cambioColor} titulo="Mis Turnos" ruta="/misturnos"/>
-                <NavComponent cambioColor={cambioColor} titulo="Mis Estudios" ruta="/misestudios"/>
-                <NavComponent cambioColor={cambioColor} titulo="Mis Datos" ruta="/misdatos"/>
-                <NavComponent cambioColor={cambioColor} titulo="Cierre Sesión" ruta="/cierresesion"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} titulo="Home" ruta="/"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenNuevoTurno} titulo="Nuevo Turno" ruta="/nuevoturno"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenTurnos} titulo="Mis Turnos" ruta="/misturnos"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenEstudios} titulo="Mis Estudios" ruta="/misestudios"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenDatos} titulo="Mis Datos" ruta="/misdatos"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} titulo="Cierre Sesión" ruta="/cierresesion"/>
                 </div>
                 <div className="componentContainer">
                 <Switch>
