@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "../Styles/Navbar.css"
 
 
-const Navcomponent = ({cambioColor}) => {
+const Navcomponent = ({cambioColor, ruta, titulo}) => {
     return (
-        <div className="options" onClick={cambioColor}>
-            
-        </div>
+        <Link to={ruta} >
+            <div className="options" onClick={cambioColor}>
+                {titulo}
+            </div>
+        </Link>
     );
 }
 

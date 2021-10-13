@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import NavComponent from './NavComponent';
+import Home from "./Home";
+import NuevoTurno from "./NuevoTurno";
+import MisTurnos from "./MisTurnos";
+import MisEstudios from "./MisEstudios";
+import MisDatos from "./MisDatos";
+import CierreSesion from "./CierreSesion"
+
 import "../Styles/Navbar.css"
 
 const Navbar = () => {
@@ -10,12 +19,38 @@ const Navbar = () => {
 
     return (
         <div className="navbarContainer">
-            <NavComponent cambioColor={cambioColor} />
-            <NavComponent cambioColor={cambioColor} />
-            <NavComponent cambioColor={cambioColor} />
-            <NavComponent cambioColor={cambioColor} />
-            <NavComponent cambioColor={cambioColor} />
-            <NavComponent cambioColor={cambioColor} />
+            <Router>
+                <div className="navbarComponent">
+                <NavComponent cambioColor={cambioColor} titulo="Home" ruta="/"/>
+                <NavComponent cambioColor={cambioColor} titulo="Nuevo Turno" ruta="/nuevoturno"/>
+                <NavComponent cambioColor={cambioColor} titulo="Mis Turnos" ruta="/misturnos"/>
+                <NavComponent cambioColor={cambioColor} titulo="Mis Estudios" ruta="/misestudios"/>
+                <NavComponent cambioColor={cambioColor} titulo="Mis Datos" ruta="/misdatos"/>
+                <NavComponent cambioColor={cambioColor} titulo="Cierre Sesión" ruta="/cierresesion"/>
+                </div>
+                <div className="componentContainer">
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route exact path="/nuevoturno">
+                        <NuevoTurno />
+                    </Route>
+                    <Route exact path="/misturnos">
+                        <MisTurnos />
+                    </Route>
+                    <Route exact path="/misestudios">
+                        <MisEstudios />
+                    </Route>
+                    <Route exact path="/misdatos">
+                        <MisDatos />
+                    </Route>
+                    <Route exact path="/cierresesion">
+                        <CierreSesion />
+                    </Route>
+                </Switch>
+                </div>
+            </Router>
         </div>
     );
 }

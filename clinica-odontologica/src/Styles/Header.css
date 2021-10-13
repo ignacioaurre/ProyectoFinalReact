@@ -22,8 +22,10 @@
 }
 
 .nombreUsuario {
+  display: flex;
   width: 70%;
+  margin-right: 15px;
   font-size: 25px;
-  justify-self: end;
+  justify-content: end;
   align-self: center;
 }
