@@ -22,29 +22,37 @@ import turnosIcon from "../images/image 2.png"
 import estudiosIcon from "../images/image 4.png"
 import datosIcon from "../images/image 3.png"
 import cierreIcon from "../images/websymbol_logout.png"
+import triangleIcon from "../images/codicon_triangle-right.png"
 
 const Navbar = () => {
 
     const [imagenFondo, setImagenFondo] = useState(imagenHome)
+    const [bgcolor1, setBgcolor1] = useState("options")
+    const [bgcolor2, setBgcolor2] = useState("options")
+    const [bgcolor3, setBgcolor3] = useState("options")
+    const [bgcolor4, setBgcolor4] = useState("options")
+    const [bgcolor5, setBgcolor5] = useState("options")
+    const [bgcolor6, setBgcolor6] = useState("options")
 
-    const cambioImagen = (e) => {
-        setImagenFondo(e.target.id)
-    } 
-
-    const cambioColor = (e) =>{
-        e.target.className === "options" ? e.target.className = "optionsSelected" : e.target.className = "options"
+    const cambioColor = () =>{
+        setBgcolor1("options")
+        setBgcolor2("options")
+        setBgcolor3("options")
+        setBgcolor4("options")
+        setBgcolor5("options")
+        setBgcolor6("options")
     }
 
     return (
         <div className="navbarContainer" style={{backgroundImage: `url(${imagenFondo})`}}>
             <Router>
                 <div className="navbarComponent">
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} icon={homeIcon} titulo="Home" ruta="/"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenNuevoTurno} icon={nuevoIcon} titulo="Nuevo Turno" ruta="/nuevoturno"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenTurnos} icon={turnosIcon} titulo="Mis Turnos" ruta="/misturnos"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenEstudios} icon={estudiosIcon} titulo="Mis Estudios" ruta="/misestudios"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenDatos} icon={datosIcon} titulo="Mis Datos" ruta="/misdatos"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} icon={cierreIcon} titulo="Cierre Sesión" ruta="/cierresesion"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor1} setBgcolor={setBgcolor1} setImagenFondo={setImagenFondo} imagen={imagenHome} icon={homeIcon} titulo="Home" ruta="/"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor2} setBgcolor={setBgcolor2} setImagenFondo={setImagenFondo} imagen={imagenNuevoTurno} icon={nuevoIcon} titulo="Nuevo Turno" ruta="/nuevoturno"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor3} setBgcolor={setBgcolor3} setImagenFondo={setImagenFondo} imagen={imagenTurnos} icon={turnosIcon} titulo="Mis Turnos" ruta="/misturnos"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor4} setBgcolor={setBgcolor4} setImagenFondo={setImagenFondo} imagen={imagenEstudios} icon={estudiosIcon} titulo="Mis Estudios" ruta="/misestudios"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor5} setBgcolor={setBgcolor5} setImagenFondo={setImagenFondo} imagen={imagenDatos} icon={datosIcon} titulo="Mis Datos" ruta="/misdatos"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor6} setBgcolor={setBgcolor6} setImagenFondo={setImagenFondo} imagen={imagenHome} icon={cierreIcon} titulo="Cierre Sesión" ruta="/cierresesion"/>
                 </div>
                 <div className="componentContainer">
                 <Switch>
