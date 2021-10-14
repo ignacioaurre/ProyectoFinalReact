@@ -2,9 +2,10 @@ import React from 'react';
 
 const Misestudios = () => {
     return (
-        <div>
-            <h1>Mis Estudios</h1>
-        </div>
+            <div className="mainContainer">
+                <header className="headerMain">Mis Estudios</header>
+                <section className="sectionMain">Mis estudios</section>
+            </div>
     );
 }
 

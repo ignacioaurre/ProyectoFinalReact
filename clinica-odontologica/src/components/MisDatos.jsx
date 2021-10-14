@@ -2,9 +2,10 @@ import React from 'react';
 
 const Misdatos = () => {
     return (
-        <div>
-            <h1>Mis Datos</h1>
-        </div>
+            <div className="mainContainer">
+                <header className="headerMain">Mis Datos</header>
+                <section className="sectionMain">Mis Datos</section>
+            </div>
     );
 }
 
