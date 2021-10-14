@@ -10,11 +10,18 @@ import MisDatos from "./MisDatos";
 import CierreSesion from "./CierreSesion"
 
 import "../Styles/Navbar.css"
+
 import imagenHome from "../images/Home.png"
 import imagenNuevoTurno from "../images/NuevoTurno.png"
 import imagenTurnos from "../images/MisTurnos.png"
 import imagenEstudios from "../images/MisEstudios.png"
 import imagenDatos from "../images/MisDatos.png"
+import homeIcon from "../images/image 5.png"
+import nuevoIcon from "../images/Vector.png"
+import turnosIcon from "../images/image 2.png"
+import estudiosIcon from "../images/image 4.png"
+import datosIcon from "../images/image 3.png"
+import cierreIcon from "../images/websymbol_logout.png"
 
 const Navbar = () => {
 
@@ -32,12 +39,12 @@ const Navbar = () => {
         <div className="navbarContainer" style={{backgroundImage: `url(${imagenFondo})`}}>
             <Router>
                 <div className="navbarComponent">
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} titulo="Home" ruta="/"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenNuevoTurno} titulo="Nuevo Turno" ruta="/nuevoturno"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenTurnos} titulo="Mis Turnos" ruta="/misturnos"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenEstudios} titulo="Mis Estudios" ruta="/misestudios"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenDatos} titulo="Mis Datos" ruta="/misdatos"/>
-                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} titulo="Cierre Sesión" ruta="/cierresesion"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} icon={homeIcon} titulo="Home" ruta="/"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenNuevoTurno} icon={nuevoIcon} titulo="Nuevo Turno" ruta="/nuevoturno"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenTurnos} icon={turnosIcon} titulo="Mis Turnos" ruta="/misturnos"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenEstudios} icon={estudiosIcon} titulo="Mis Estudios" ruta="/misestudios"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenDatos} icon={datosIcon} titulo="Mis Datos" ruta="/misdatos"/>
+                <NavComponent cambioColor={cambioColor} cambioImagen={cambioImagen} imagen={imagenHome} icon={cierreIcon} titulo="Cierre Sesión" ruta="/cierresesion"/>
                 </div>
                 <div className="componentContainer">
                 <Switch>
