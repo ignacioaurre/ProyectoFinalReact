@@ -12,8 +12,7 @@ public class EstudioComplementario {
 
     /* Atributos */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "estudio_sequence")
-    @SequenceGenerator(name= "estudio_sequence", sequenceName = "estudio_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id_estudio")
     private Long id;
     private String nombre;

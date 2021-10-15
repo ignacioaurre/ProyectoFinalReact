@@ -10,8 +10,7 @@ public class Domicilio {
 
     /* Atributos */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "domicilio_sequence")
-    @SequenceGenerator(name= "domicilio_sequence", sequenceName = "domicilio_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id_domicilio")
     private Long id;
     private String calle;

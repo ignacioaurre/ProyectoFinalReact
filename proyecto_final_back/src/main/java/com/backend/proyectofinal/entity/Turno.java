@@ -13,8 +13,7 @@ public class Turno {
 
     /* Atributos */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "turno_sequence")
-    @SequenceGenerator(name= "turno_sequence", sequenceName = "turno_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "id_turno")
     private Long id;
 

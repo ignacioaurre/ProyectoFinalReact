@@ -14,8 +14,7 @@ public class Odontologo {
 
     /* Atributos */
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "odontologo_sequence")
-    @SequenceGenerator(name= "odontologo_sequence", sequenceName = "odontologo_sequence")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_odontologo")
     private Long id;
     private String nombre;
