@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import NavComponent from './NavComponent';
@@ -34,6 +34,18 @@ const Navbar = () => {
     const [bgcolor5, setBgcolor5] = useState("options")
     const [bgcolor6, setBgcolor6] = useState("options")
 
+    const [odontologos, seteOdontologos] = useState([]);
+
+    const fetchApi = async () => {
+        const response = await fetch("http://localhost:8080/odontologos");
+        const responseJSON = await response.json()
+        seteOdontologos(responseJSON);
+    }
+
+    useEffect(() => {
+        fetchApi();
+    }, []);
+
     const cambioColor = () =>{
         setBgcolor1("options")
         setBgcolor2("options")
@@ -47,7 +59,7 @@ const Navbar = () => {
         <div className="navbarContainer" style={{backgroundImage: `url(${imagenFondo})`}}>
             <Router>
                 <div className="navbarComponent">
-                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor1} setBgcolor={setBgcolor1} setImagenFondo={setImagenFondo} imagen={imagenHome} icon={homeIcon} titulo="Home" ruta="/"/>
+                <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor1} setBgcolor={setBgcolor1} setImagenFondo={setImagenFondo} imagen={imagenHome} icon={homeIcon} titulo="Home" ruta="/home"/>
                 <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor2} setBgcolor={setBgcolor2} setImagenFondo={setImagenFondo} imagen={imagenNuevoTurno} icon={nuevoIcon} titulo="Nuevo Turno" ruta="/nuevoturno"/>
                 <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor3} setBgcolor={setBgcolor3} setImagenFondo={setImagenFondo} imagen={imagenTurnos} icon={turnosIcon} titulo="Mis Turnos" ruta="/misturnos"/>
                 <NavComponent triangle={triangleIcon} cambioColor={cambioColor} color={bgcolor4} setBgcolor={setBgcolor4} setImagenFondo={setImagenFondo} imagen={imagenEstudios} icon={estudiosIcon} titulo="Mis Estudios" ruta="/misestudios"/>
@@ -56,7 +68,7 @@ const Navbar = () => {
                 </div>
                 <div className="componentContainer">
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/home">
                         <Home />
                     </Route>
                     <Route exact path="/nuevoturno">
@@ -66,7 +78,7 @@ const Navbar = () => {
                         <MisTurnos />
                     </Route>
                     <Route exact path="/misestudios">
-                        <MisEstudios />
+                        <MisEstudios odontologos={odontologos}/>
                     </Route>
                     <Route exact path="/misdatos">
                         <MisDatos />
